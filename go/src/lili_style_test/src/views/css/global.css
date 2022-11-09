@@ -1,0 +1,15 @@
+.imgFrame {
+    width: 150px;
+}
+img{
+    width: 100%;
+}
+
+p {
+    color: #6B7280;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

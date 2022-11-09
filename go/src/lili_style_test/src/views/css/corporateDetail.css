@@ -1,0 +1,206 @@
+p{
+    margin: 0;
+}
+
+.content{
+    margin: 0 auto;
+    width: 1000px;
+}
+.text-box {
+    margin: 0 auto;
+}
+
+.user-box {
+    margin-top: 20px;
+    background-color: #FAFAFA;
+    height: 600px;
+}
+
+.name {
+    padding: 25px 0;
+    margin-left: 5%;
+}
+
+.detail-box{
+    width: 90%;
+    height: 500px;
+    margin: 0 auto;
+    border: solid 1px #E3E3E3;
+    background-color: white;
+}
+.detail-header {
+    display: flex;
+
+}
+.header-name {
+    /*width: 50%;*/
+    /*text-align: center;*/
+    /*border-radius: 0;*/
+    /*border-style: none;*/
+}
+
+.member {
+    border: solid 1px #E3E3E3;
+    width: 50%;
+    text-align: center;
+    border-radius: 0;
+    background-color: #E3E3E3;
+    color: black;
+}
+
+.memberUncheck {
+    background-color: white;
+    border: solid 1px #E3E3E3;
+    width: 50%;
+    text-align: center;
+    border-radius: 0;
+    color: black;
+}
+
+.diagnosis {
+    background-color: white;
+    border: solid 1px #E3E3E3;
+    width: 50%;
+    text-align: center;
+    border-radius: 0;
+    color: black;
+}
+
+.diagnosisCheck{
+    border: solid 1px #E3E3E3;
+    width: 50%;
+    text-align: center;
+    border-radius: 0;
+    background-color: #E3E3E3;
+    color: black;
+}
+
+
+.detail-content {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.memberResult {
+    width: 100%;
+    margin-top: 80px;
+    display: flex;
+}
+
+.member-resultUncheck {
+    display: none;
+}
+
+
+.left-table {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.left-table td {
+    width: 50%;
+}
+th {
+    height: 25px !important;
+}
+
+td {
+    height: 25px !important;
+}
+
+.right-table {
+    width: 40%;
+    margin: 0 auto;
+    height: 50px;
+}
+.right-table td {
+    width: 50%;
+}
+
+.diagnosis-result{
+    display: none;
+}
+
+.diagnosis-resultCheck{
+    display: inline;
+}
+
+
+.table-header {
+    background-color: #D9D9D9;
+    color: #555555;
+}
+
+.user-table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.user-table p {
+    color: black;
+    padding-left: 20px;
+}
+.user-table tr {
+    border: solid 1px #D9D9D9;
+}
+.user-table td {
+    height: 30px !important;
+}
+
+.detail-button {
+    text-align: center;
+}
+.detail-button button {
+    background-color: #D9D9D9;
+    border: solid 1px #D9D9D9;
+}
+
+.chart {
+    width: 100%;
+}
+
+.businessFrame{
+    width:350px !important;
+    height:350px !important;
+    margin: 0 auto;
+}
+.businessUncheck {
+    display: none;
+}
+.business {
+    display: inline;
+}
+.business h2 {
+    margin-bottom: 0;
+}
+
+.personalityFrame {
+    width:350px !important;
+    height:350px !important;
+    margin: 0 auto;
+}
+
+.personalityUncheck {
+    display: none;
+}
+.personality {
+    display: inline;
+}
+
+.personality h2 {
+    margin-bottom: 0;
+}
+
+.button-block {
+    width: 100%;
+    text-align: center;
+
+}
+
+.backList {
+    width: 200px;
+    background-color: #D9D9D9;
+    border: solid 1px #D9D9D9;
+}

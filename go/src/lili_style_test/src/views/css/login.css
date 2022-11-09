@@ -1,0 +1,45 @@
+
+form {
+    width: 500px;
+    text-align: center;
+    margin: auto ;
+    margin-top: 250px;
+}
+
+input {
+    width: 100%;
+    height: 25px;
+}
+
+p {
+    color: #6B7280;
+}
+.format {
+    width: 100%;
+}
+.place {
+    color: #6B7280;
+    border: solid 1px #D1D5DB;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.send{
+    position: relative;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.signIn {
+    background-color: #4F46E5;
+    color: #FFFFFF;
+    border-color: #4F46E5;
+    border-style: solid;
+    border-radius: 2px;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+}
+
+
