@@ -1,0 +1,24 @@
+name: Deploy
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build
+        run: go build -v main.go
+
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@2.0.0   # FTPを使ってサーバーにDeployするアクションを実行
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}     # FTPサーバーのURLを設定
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }} # FTPのユーザー名を設定
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }} # FTPのパスワードを設定
+          LOCAL_DIR: /          # どのディレクトリのデータをアップロードするか
+          REMOTE_DIR: /lili_style_test      # ロリポップ！FTPサーバのどのディレクトリにアップロードするか
+          ARGS: --delete
