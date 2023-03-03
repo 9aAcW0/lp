@@ -1,0 +1,54 @@
+.header {
+    margin: 0 10%;
+}
+.result {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+}
+.chartFrame{
+    width:400px !important;
+    height:400px !important;
+}
+.chart {
+    width: 100%;
+}
+
+.description {
+    width: 60%;
+    margin: auto 0;
+    margin-left: 35px;
+}
+
+.param {
+    font-size: 12px;
+}
+
+@media screen and (max-width: 1025px) {
+    /* 959px以下に適用されるCSS（タブレット用） */
+    .result {
+        width: 800px;
+    }
+    .param {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 481px) {
+    /* 480px以下に適用されるCSS（スマホ用） */
+    .result {
+        width: 90%;
+        margin: 0 auto;
+        display: inline;
+        margin-bottom: 30px;
+    }
+    .chartFrame{
+        width:300px !important;
+        height:300px !important;
+        margin: 0 auto;
+    }
+    .description {
+        width: 350px;
+        margin: 0 auto;
+    }
+}

@@ -1,0 +1,45 @@
+.imgFrame {
+    width: 150px;
+}
+img{
+    width: 100%;
+}
+
+p {
+    color: #6B7280;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+ h3 {
+     font-size: 19px;
+ }
+.garbage {
+    display: none;
+}
+.garbage-text {
+    border: none;
+    /*display: block;*/
+    /*font-size: 1.17em;*/
+    /*margin-block-start: 1em;*/
+    /*margin-block-end: 1em;*/
+    /*margin-inline-start: 0px;*/
+    /*margin-inline-end: 0px;*/
+    font-weight: bold;
+    font-size: 19px;
+    margin-right: 0;
+    background-color: white;
+}
+
+@media screen and (max-width: 481px) {
+    h1 {
+        font-size: 20px;
+        margin: 0;
+    }
+    h2 {
+        font-size: 15px;
+        margin-top: 5px;
+    }
+}

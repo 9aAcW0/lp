@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css" media="screen">
+        @import url("/css/global.css");
+        @import url("/css/corporate.css");
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div class="imgFrame">
+    <img src="/img/lilistyle_logo_yoko_rgb.png">
+</div>
+<div class="content">
+    <div class="text-box">
+        <h2>会員管理</h2>
+        <div class="sub-title">
+            <h3 class="caption">会員一覧</h3>
+            <div><input id="search"  type="text" onkeyup="SearchFunction()" placeholder="検索"></div>
+        </div>
+    </div>
+    <form class="detailSearch">
+        <select id="category" name="">
+            <option value="0">カテゴリーを選んでください
+            <option value="altruism">利他指数
+            <option value="businessStance">ビジネススタンス指数
+            <option value="carrierUp">キャリアアップ指数
+            <option value="commit">コミット指数
+            <option value="mentality">メンタリティ指数
+        </select>
+        <select id="rate" name="">
+            <option value=0>点数を選んでください
+            <option value=1>1以上
+            <option value=2>2以上
+            <option value=3>3以上
+            <option value=4>4以上
+            <option value=5>5以上
+            <option value=6>6以上
+            <option value=7>7以上
+            <option value=8>8以上
+            <option value=9>9以上
+            <option value=10>10
+        </select>
+        <span class="searchButton" value="test" onclick="SortFunction({{ .users }})">検索</span>
+    </form>
+      <table class="user-table" id="result">
+        <tr class="table-header">
+            <th class="name"><p>名前</p></th>
+            <th class="type"><p>ユーザータイプ</p></th>
+            <th class="addDate"><p>追加日</p></th>
+            <th></th>
+        </tr>
+        {{ range .users }}
+        <tr class="resultTable">
+            <th class="name"><p>{{.Name}}</p></th>
+            <th class="type"><p>{{.Class}}</p></th>
+            <th class="addDate"><p>{{.TimeStamp}}</p></th>
+            <th class="detail">
+
+                <form method="POST" action="/corporate/userDetail">
+                    <input class="place" type="text" name="corporateID" value={{ .Corporate.CorporateID }}>
+                    <input class="place" type="text" name="password" value={{ .Corporate.Passcode }}>
+                    <input class="place" type="text" name="mail" value={{ .Mail }}>
+                    <input class="button" type="submit" value="詳細">
+                </form>
+            </th>
+
+        </tr>
+        {{ end }}
+    </table>
+</div>
+<script>
+function SearchFunction() {
+// Declare variables
+    var input, filter, table, tr, name, i, txtValue;
+    input = document.getElementById('search');
+    filter = input.value.toUpperCase();
+    table = document.getElementById("result");
+    tr = table.getElementsByClassName('resultTable');
+    $("#category").val(0);
+    $("#rate").val(0);
+// Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+        name = tr[i].getElementsByClassName("name")[0];
+        txtValue = name.textContent || name.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+        } else {
+            tr[i].style.display = "none";
+        }
+    }
+}
+
+function SortFunction(users) {
+    var table, tr, targets, category, rate
+    category = $("#category").val()
+    rate = $("#rate").val()
+    table = document.getElementById("result");
+    tr = table.getElementsByClassName('resultTable');
+    targets = new Array()
+    switch (category) {
+        case "altruism":
+            for (i = 0; i < users.length; i++) {
+                targets.push(users[i].AltruismRate)
+            }
+        case "businessStance":
+            for (i = 0; i < users.length; i++) {
+                targets.push(users[i].BusinessStanceRate);
+            }
+        case "carrierUp":
+            for (i = 0; i < users.length; i++) {
+                targets.push(users[i].CarrierUpRate);
+            }
+        case "commit":
+            for (i = 0; i < users.length; i++) {
+                targets.push(users[i].CommitRate);
+            }
+        case "mentality":
+            for (i = 0; i < users.length; i++) {
+                targets.push(users[i].MentalityRate);
+            }
+        default:
+            for (i = 0; i < users.length; i++) {
+                targets.push(users[i].MentalityRate);
+            }
+    }
+    for (i = 0; i < users.length; i++) {
+        if (targets[i] >= rate) {
+            tr[i].style.display = "";
+        } else {
+            tr[i].style.display = "none";
+        }
+    }
+}
+
+</script>
+</body>
+</html>

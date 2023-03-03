@@ -1,0 +1,99 @@
+.content{
+    margin: 0 auto;
+    width: 1000px;
+}
+.text-box {
+    margin: 0 auto;
+}
+
+.user-table {
+    max-height:700px;
+    width:100%;
+    overflow-y:scroll;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: left;
+}
+
+tr {
+    height: 25px !important;
+    border: solid 1px #D9D9D9;
+}
+
+p {
+    margin: 8px 0;
+    color: #000000;
+    padding-left: 10px;
+}
+
+.table-header {
+    background-color: #D9D9D9;
+    color: #555555;
+}
+
+
+.name{
+    width: 25%;
+}
+
+.type {
+    width: 25%;
+}
+.addDate {
+    width: 36%;
+}
+.detail {
+    width: 14%;
+    text-align: center;
+}
+.button {
+    background-color: #D9D9D9;
+    border: solid 1px #D9D9D9;
+}
+
+.place{
+    display: none;
+}
+
+.caption {
+    width: 25%;
+    margin-right: 0;
+    float: left;
+}
+#search {
+    float: right;
+    margin: 19px 0;
+    height: 23px;
+}
+
+select {
+    margin: 19px 5px;
+    height: 29px;
+}
+
+.detailSearch {
+    display: flex;
+    margin: 0;
+    margin-left: 20%;
+    justify-content: flex-end;
+    height: 67px;
+}
+.searchButton {
+    height: 23px;
+    margin: auto 5px;
+    margin-right: 10px;
+    padding: 1px 6px;
+    background-color: #D9D9D9;
+    border: solid 1px #D9D9D9;
+}
+@media screen and (max-width: 1025px) {
+    /* 959px以下に適用されるCSS（タブレット用） */
+    .content {
+        width: 800px;
+    }
+}
+@media screen and (max-width: 481px) {
+    .content {
+        width: 350px;
+    }
+}
